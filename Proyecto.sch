@@ -491,7 +491,7 @@ F 1 "Songle_SRD" H 4450 5500 50  0000 C CNN
 F 2 "Relays_ThroughHole:Relay_SANYOU_SRD_Series_Form_C" V 4350 6000 50  0001 C CNN
 F 3 "" V 4350 6000 50  0000 C CNN
 	1    4400 6100
-	1    0    0    -1  
+	1    0    0    1   
 $EndComp
 $Comp
 L Songle_SRD Relay2
@@ -823,28 +823,6 @@ F 3 "" H 2100 4800 50  0000 C CNN
 	1    2100 4800
 	1    0    0    -1  
 $EndComp
-$Comp
-L GND #PWR027
-U 1 1 5770310C
-P 1400 5200
-F 0 "#PWR027" H 1400 4950 50  0001 C CNN
-F 1 "GND" H 1400 5050 50  0000 C CNN
-F 2 "" H 1400 5200 50  0000 C CNN
-F 3 "" H 1400 5200 50  0000 C CNN
-	1    1400 5200
-	1    0    0    -1  
-$EndComp
-$Comp
-L GND #PWR028
-U 1 1 57705AC3
-P 3100 5300
-F 0 "#PWR028" H 3100 5050 50  0001 C CNN
-F 1 "GND" H 3100 5150 50  0000 C CNN
-F 2 "" H 3100 5300 50  0000 C CNN
-F 3 "" H 3100 5300 50  0000 C CNN
-	1    3100 5300
-	-1   0    0    1   
-$EndComp
 Text Label 3450 2500 0    60   ~ 0
 INT
 Text Label 3450 2600 0    60   ~ 0
@@ -872,10 +850,10 @@ R1
 Text Label 3200 4950 2    60   ~ 0
 R2
 $Comp
-L +5V #PWR029
+L +5V #PWR027
 U 1 1 5771468E
 P 6500 6400
-F 0 "#PWR029" H 6500 6250 50  0001 C CNN
+F 0 "#PWR027" H 6500 6250 50  0001 C CNN
 F 1 "+5V" H 6500 6540 50  0000 C CNN
 F 2 "" H 6500 6400 50  0000 C CNN
 F 3 "" H 6500 6400 50  0000 C CNN
@@ -913,14 +891,59 @@ LED
 Text Label 1650 5100 0    60   ~ 0
 LED
 $Comp
-L GND #PWR030
+L GND #PWR028
 U 1 1 57722BB9
 P 6400 7400
-F 0 "#PWR030" H 6400 7150 50  0001 C CNN
+F 0 "#PWR028" H 6400 7150 50  0001 C CNN
 F 1 "GND" H 6400 7250 50  0000 C CNN
 F 2 "" H 6400 7400 50  0000 C CNN
 F 3 "" H 6400 7400 50  0000 C CNN
 	1    6400 7400
+	1    0    0    -1  
+$EndComp
+Text Label 1600 5400 0    60   ~ 0
+tx
+Text Label 1600 5500 0    60   ~ 0
+rx
+NoConn ~ 1900 5300
+NoConn ~ 1900 4500
+NoConn ~ 1900 4600
+NoConn ~ 1900 4700
+NoConn ~ 1900 4800
+NoConn ~ 1900 4900
+NoConn ~ 1900 5000
+NoConn ~ 3350 5450
+$Comp
+L +5V #PWR029
+U 1 1 5774E878
+P 2800 5150
+F 0 "#PWR029" H 2800 5000 50  0001 C CNN
+F 1 "+5V" H 2800 5290 50  0000 C CNN
+F 2 "" H 2800 5150 50  0000 C CNN
+F 3 "" H 2800 5150 50  0000 C CNN
+	1    2800 5150
+	1    0    0    -1  
+$EndComp
+$Comp
+L LED D4
+U 1 1 57753C3E
+P 3300 1350
+F 0 "D4" H 3300 1450 50  0000 C CNN
+F 1 "LED 2" H 3300 1250 50  0000 C CNN
+F 2 "LEDs:LED-5MM" H 3300 1350 50  0001 C CNN
+F 3 "" H 3300 1350 50  0000 C CNN
+	1    3300 1350
+	0    -1   -1   0   
+$EndComp
+$Comp
+L R R11
+U 1 1 57753C44
+P 3300 1750
+F 0 "R11" V 3380 1750 50  0000 C CNN
+F 1 "1k" V 3300 1750 50  0000 C CNN
+F 2 "Resistors_ThroughHole:Resistor_Horizontal_RM10mm" V 3230 1750 50  0001 C CNN
+F 3 "" H 3300 1750 50  0000 C CNN
+	1    3300 1750
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -977,21 +1000,12 @@ Connection ~ 4100 2900
 Wire Wire Line
 	3450 5950 3450 5900
 Wire Wire Line
-	3450 5900 3750 5900
-Wire Wire Line
-	3750 5900 3750 6050
-Wire Wire Line
 	3450 6250 3450 6300
 Wire Wire Line
 	3450 6300 3750 6300
 Wire Wire Line
-	3750 6300 3750 6150
-Wire Wire Line
 	3600 6300 3600 6400
 Connection ~ 3600 6300
-Wire Wire Line
-	3600 5850 3600 5900
-Connection ~ 3600 5900
 Wire Wire Line
 	3600 6800 3600 6850
 Wire Wire Line
@@ -999,7 +1013,7 @@ Wire Wire Line
 Wire Wire Line
 	4950 6900 4950 7000
 Wire Wire Line
-	4400 6950 4400 6600
+	4400 6450 4400 6950
 Wire Wire Line
 	4650 1150 4650 1100
 Wire Wire Line
@@ -1010,8 +1024,6 @@ Wire Wire Line
 	5150 1100 5100 1100
 Wire Wire Line
 	7950 2750 7950 2950
-Wire Wire Line
-	4300 5800 4300 5650
 Wire Wire Line
 	4800 5950 4800 6950
 Wire Wire Line
@@ -1161,8 +1173,6 @@ Wire Wire Line
 Wire Wire Line
 	1900 5500 1350 5500
 Wire Wire Line
-	1900 5200 1400 5200
-Wire Wire Line
 	1900 4300 1700 4300
 Wire Wire Line
 	1700 4200 1900 4200
@@ -1211,30 +1221,11 @@ Wire Wire Line
 Wire Wire Line
 	1900 5100 1650 5100
 Wire Wire Line
-	6550 7400 6550 6900
-Wire Wire Line
-	6400 7200 6400 7300
-Wire Wire Line
 	6200 7000 6200 7300
-Wire Wire Line
-	6200 7300 6550 7300
-Connection ~ 6400 7300
-Wire Wire Line
-	6300 7400 6550 7400
-Wire Wire Line
-	6300 7400 6300 7300
-Connection ~ 6300 7300
-Connection ~ 6550 7300
-Connection ~ 6400 7400
 Connection ~ 7000 3700
 Connection ~ 7200 2800
-Connection ~ 3600 5850
 Connection ~ 4600 1100
 Connection ~ 4650 1150
-Wire Wire Line
-	3350 5350 3100 5350
-Wire Wire Line
-	3100 5350 3100 5300
 Wire Wire Line
 	2100 7100 2100 7150
 Wire Wire Line
@@ -1253,47 +1244,12 @@ Wire Wire Line
 Wire Wire Line
 	7350 4400 7000 4400
 Wire Wire Line
-	5150 5850 5100 5850
-Wire Wire Line
-	5100 5850 5100 5800
-Wire Wire Line
-	5100 5800 4500 5800
-Wire Wire Line
-	5150 6050 4950 6050
-Wire Wire Line
-	4950 6050 4950 5650
-Wire Wire Line
-	4950 5650 4300 5650
-Wire Wire Line
 	5150 5950 4800 5950
-Text Label 1600 5400 0    60   ~ 0
-tx
-Text Label 1600 5500 0    60   ~ 0
-rx
-NoConn ~ 1900 5300
-NoConn ~ 1900 4500
-NoConn ~ 1900 4600
-NoConn ~ 1900 4700
-NoConn ~ 1900 4800
-NoConn ~ 1900 4900
-NoConn ~ 1900 5000
-NoConn ~ 3350 5450
 Wire Wire Line
 	1800 650  1800 600 
 Wire Wire Line
 	1800 600  2950 600 
 Connection ~ 2950 800 
-$Comp
-L +5V #PWR031
-U 1 1 5774E878
-P 2800 5150
-F 0 "#PWR031" H 2800 5000 50  0001 C CNN
-F 1 "+5V" H 2800 5290 50  0000 C CNN
-F 2 "" H 2800 5150 50  0000 C CNN
-F 3 "" H 2800 5150 50  0000 C CNN
-	1    2800 5150
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	3350 5150 2800 5150
 Wire Wire Line
@@ -1320,28 +1276,6 @@ Wire Wire Line
 Wire Wire Line
 	8050 2750 8050 3300
 Connection ~ 8050 3300
-$Comp
-L LED D4
-U 1 1 57753C3E
-P 3300 1350
-F 0 "D4" H 3300 1450 50  0000 C CNN
-F 1 "LED 2" H 3300 1250 50  0000 C CNN
-F 2 "LEDs:LED-5MM" H 3300 1350 50  0001 C CNN
-F 3 "" H 3300 1350 50  0000 C CNN
-	1    3300 1350
-	0    -1   -1   0   
-$EndComp
-$Comp
-L R R11
-U 1 1 57753C44
-P 3300 1750
-F 0 "R11" V 3380 1750 50  0000 C CNN
-F 1 "1k" V 3300 1750 50  0000 C CNN
-F 2 "Resistors_ThroughHole:Resistor_Horizontal_RM10mm" V 3230 1750 50  0001 C CNN
-F 3 "" H 3300 1750 50  0000 C CNN
-	1    3300 1750
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	3300 1550 3300 1600
 Connection ~ 3300 1150
@@ -1349,7 +1283,108 @@ Wire Wire Line
 	2950 1900 3300 1900
 Connection ~ 2950 1900
 Connection ~ 3300 1350
-Connection ~ 1400 5200
 Wire Wire Line
 	2050 1750 2050 1650
+Wire Wire Line
+	3450 5900 3750 5900
+Wire Wire Line
+	3750 5900 3750 6050
+Wire Wire Line
+	3750 6300 3750 6150
+Wire Wire Line
+	3600 5850 3600 5900
+Connection ~ 3600 5900
+Wire Wire Line
+	6400 7200 6400 7400
+Wire Wire Line
+	6200 7300 6550 7300
+Connection ~ 6400 7300
+Wire Wire Line
+	6550 7300 6550 6900
+Wire Wire Line
+	4400 6450 4650 6450
+Wire Wire Line
+	4650 6450 4650 5550
+Wire Wire Line
+	4650 5550 4400 5550
+Wire Wire Line
+	4400 5550 4400 5600
+Wire Wire Line
+	5150 6050 4900 6050
+Wire Wire Line
+	4900 6050 4900 6300
+Wire Wire Line
+	4900 6300 4350 6300
+Wire Wire Line
+	4350 6300 4350 6450
+Wire Wire Line
+	4350 6450 4300 6450
+Wire Wire Line
+	4300 6450 4300 6400
+Wire Wire Line
+	5150 5850 4700 5850
+Wire Wire Line
+	4700 5850 4700 6500
+Wire Wire Line
+	4700 6500 4500 6500
+Wire Wire Line
+	4500 6500 4500 6400
+Wire Wire Line
+	3100 5350 3100 5300
+Wire Wire Line
+	3350 5350 3100 5350
+$Comp
+L GND #PWR030
+U 1 1 57705AC3
+P 3100 5300
+F 0 "#PWR030" H 3100 5050 50  0001 C CNN
+F 1 "GND" H 3100 5150 50  0000 C CNN
+F 2 "" H 3100 5300 50  0000 C CNN
+F 3 "" H 3100 5300 50  0000 C CNN
+	1    3100 5300
+	-1   0    0    1   
+$EndComp
+NoConn ~ 1900 5200
+NoConn ~ 8950 3850
+$Comp
+L MCP2515 U6
+U 1 1 577574D8
+P 9300 2000
+F 0 "U6" H 9300 1900 50  0000 C CNN
+F 1 "MCP2515" H 9300 2100 50  0000 C CNN
+F 2 "Housings_SOIC:SOIC-18_7.5x11.6mm_Pitch1.27mm" H 9300 2000 50  0001 C CNN
+F 3 "DOCUMENTATION" H 9300 2000 50  0001 C CNN
+	1    9300 2000
+	1    0    0    -1  
+$EndComp
+NoConn ~ 10050 1600
+NoConn ~ 10050 1700
+NoConn ~ 10050 1800
+NoConn ~ 10050 1900
+NoConn ~ 10050 2000
+NoConn ~ 10050 2100
+NoConn ~ 10050 2200
+NoConn ~ 10050 2300
+NoConn ~ 10050 2400
+NoConn ~ 8550 1600
+NoConn ~ 8550 1700
+NoConn ~ 8550 1800
+NoConn ~ 8550 1900
+NoConn ~ 8550 2000
+NoConn ~ 8550 2100
+NoConn ~ 8550 2200
+NoConn ~ 8550 2300
+$Comp
+L GND #PWR?
+U 1 1 57758B22
+P 8550 2500
+F 0 "#PWR?" H 8550 2250 50  0001 C CNN
+F 1 "GND" H 8550 2350 50  0000 C CNN
+F 2 "" H 8550 2500 50  0000 C CNN
+F 3 "" H 8550 2500 50  0000 C CNN
+	1    8550 2500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8550 2500 8550 2400
 $EndSCHEMATC
