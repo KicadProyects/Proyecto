@@ -1,5 +1,4 @@
 EESchema Schematic File Version 2
-LIBS:Proyecto-rescue
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -33,6 +32,8 @@ LIBS:MCP2515 E
 LIBS:SongleRelay
 LIBS:mylib
 LIBS:HK4100F
+LIBS:acs712
+LIBS:AMS1117
 LIBS:Proyecto-cache
 EELAYER 25 0
 EELAYER END
@@ -191,8 +192,8 @@ $Comp
 L AMS1117 U3
 U 1 1 576B4051
 P 2050 1150
-F 0 "U3" H 2050 1050 50  0000 C CNN
-F 1 "AMS1117" H 2050 1250 50  0000 C CNN
+F 0 "U3" H 2200 1100 50  0000 C CNN
+F 1 "AMS1117" H 2300 1250 50  0000 C CNN
 F 2 "TO_SOT_Packages_SMD:SOT-223" H 2050 1150 60  0001 C CNN
 F 3 "" H 2050 1150 60  0000 C CNN
 	1    2050 1150
@@ -449,17 +450,6 @@ F 3 "" H 8400 4900 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L CONN_01X02 Serial1
-U 1 1 576BE4E2
-P 1150 5450
-F 0 "Serial1" H 1150 5600 50  0000 C CNN
-F 1 "CONN_01X02" V 1250 5450 50  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x02" H 1150 5450 50  0001 C CNN
-F 3 "" H 1150 5450 50  0000 C CNN
-	1    1150 5450
-	-1   0    0    1   
-$EndComp
-$Comp
 L C CFilter1
 U 1 1 576C1DAD
 P 6400 7050
@@ -638,12 +628,12 @@ $EndComp
 $Comp
 L GND #PWR019
 U 1 1 576D4905
-P 2950 1900
-F 0 "#PWR019" H 2950 1650 50  0001 C CNN
-F 1 "GND" H 2950 1750 50  0000 C CNN
-F 2 "" H 2950 1900 50  0000 C CNN
-F 3 "" H 2950 1900 50  0000 C CNN
-	1    2950 1900
+P 2950 1750
+F 0 "#PWR019" H 2950 1500 50  0001 C CNN
+F 1 "GND" H 2950 1600 50  0000 C CNN
+F 2 "" H 2950 1750 50  0000 C CNN
+F 3 "" H 2950 1750 50  0000 C CNN
+	1    2950 1750
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -768,36 +758,36 @@ F 3 "" H 5500 3900 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L LED LED_BLINK1
+L LED LED1
 U 1 1 576E88E2
-P 2100 6550
-F 0 "LED_BLINK1" H 2100 6650 50  0000 C CIN
-F 1 "LED" H 2100 6450 50  0000 C CNN
-F 2 "LEDs:LED-5MM" H 2100 6550 50  0001 C CNN
-F 3 "" H 2100 6550 50  0000 C CNN
-	1    2100 6550
+P 1300 2600
+F 0 "LED1" H 1300 2700 50  0000 C CIN
+F 1 "LED" H 1300 2500 50  0000 C CNN
+F 2 "LEDs:LED-5MM" H 1300 2600 50  0001 C CNN
+F 3 "" H 1300 2600 50  0000 C CNN
+	1    1300 2600
 	0    -1   -1   0   
 $EndComp
 $Comp
 L R R10
 U 1 1 576E88E8
-P 2100 6950
-F 0 "R10" V 2180 6950 50  0000 C CNN
-F 1 "1k" V 2100 6950 50  0000 C CNN
-F 2 "Resistors_ThroughHole:Resistor_Horizontal_RM10mm" V 2030 6950 50  0001 C CNN
-F 3 "" H 2100 6950 50  0000 C CNN
-	1    2100 6950
+P 1300 3000
+F 0 "R10" V 1380 3000 50  0000 C CNN
+F 1 "1k" V 1300 3000 50  0000 C CNN
+F 2 "Resistors_ThroughHole:Resistor_Horizontal_RM10mm" V 1230 3000 50  0001 C CNN
+F 3 "" H 1300 3000 50  0000 C CNN
+	1    1300 3000
 	1    0    0    -1  
 $EndComp
 $Comp
 L GND #PWR026
 U 1 1 576E9171
-P 2100 7150
-F 0 "#PWR026" H 2100 6900 50  0001 C CNN
-F 1 "GND" H 2100 7000 50  0000 C CNN
-F 2 "" H 2100 7150 50  0000 C CNN
-F 3 "" H 2100 7150 50  0000 C CNN
-	1    2100 7150
+P 1300 3250
+F 0 "#PWR026" H 1300 3000 50  0001 C CNN
+F 1 "GND" H 1300 3100 50  0000 C CNN
+F 2 "" H 1300 3250 50  0000 C CNN
+F 3 "" H 1300 3250 50  0000 C CNN
+	1    1300 3250
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -832,7 +822,7 @@ Text Label 3450 2800 0    60   ~ 0
 SO
 Text Label 3450 2900 0    60   ~ 0
 CS
-Text Label 3250 4050 2    60   ~ 0
+Text Label 3350 4050 2    60   ~ 0
 SCK
 Text Label 1700 4300 0    60   ~ 0
 CS
@@ -842,11 +832,11 @@ Text Label 1700 4100 0    60   ~ 0
 SO
 Text Label 4950 5050 0    60   ~ 0
 R1
-Text Label 2650 6600 0    60   ~ 0
+Text Label 2850 6600 0    60   ~ 0
 R2
-Text Label 3200 5050 2    60   ~ 0
+Text Label 3300 5050 2    60   ~ 0
 R1
-Text Label 3200 4950 2    60   ~ 0
+Text Label 3300 4850 2    60   ~ 0
 R2
 $Comp
 L +5V #PWR027
@@ -874,18 +864,15 @@ NoConn ~ 3350 5250
 NoConn ~ 3350 4650
 NoConn ~ 3350 4550
 NoConn ~ 3350 4250
-NoConn ~ 3350 4150
 Text Label 6150 6750 0    60   ~ 0
 AC1
 Text Label 1700 4400 0    60   ~ 0
 INT
-Text Label 3200 4850 2    60   ~ 0
-AC1
-Text Label 3200 4750 2    60   ~ 0
+Text Label 3350 4950 2    60   ~ 0
 AC2
 Text Label 8350 5200 0    60   ~ 0
 AC2
-Text Label 1950 6350 0    60   ~ 0
+Text Label 1150 2400 0    60   ~ 0
 LED
 Text Label 1650 5100 0    60   ~ 0
 LED
@@ -900,11 +887,6 @@ F 3 "" H 6400 7400 50  0000 C CNN
 	1    6400 7400
 	1    0    0    -1  
 $EndComp
-Text Label 1600 5400 0    60   ~ 0
-tx
-Text Label 1600 5500 0    60   ~ 0
-rx
-NoConn ~ 1900 5300
 NoConn ~ 1900 4500
 NoConn ~ 1900 4600
 NoConn ~ 1900 4700
@@ -924,25 +906,25 @@ F 3 "" H 2800 5150 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L LED D4
+L LED LED_Vcc1
 U 1 1 57753C3E
-P 3300 1350
-F 0 "D4" H 3300 1450 50  0000 C CNN
-F 1 "LED 2" H 3300 1250 50  0000 C CNN
-F 2 "LEDs:LED-5MM" H 3300 1350 50  0001 C CNN
-F 3 "" H 3300 1350 50  0000 C CNN
-	1    3300 1350
+P 2200 2600
+F 0 "LED_Vcc1" H 2200 2700 50  0000 C CNN
+F 1 "LED" H 2200 2500 50  0000 C CNN
+F 2 "LEDs:LED-5MM" H 2200 2600 50  0001 C CNN
+F 3 "" H 2200 2600 50  0000 C CNN
+	1    2200 2600
 	0    -1   -1   0   
 $EndComp
 $Comp
 L R R11
 U 1 1 57753C44
-P 3300 1750
-F 0 "R11" V 3380 1750 50  0000 C CNN
-F 1 "1k" V 3300 1750 50  0000 C CNN
-F 2 "Resistors_ThroughHole:Resistor_Horizontal_RM10mm" V 3230 1750 50  0001 C CNN
-F 3 "" H 3300 1750 50  0000 C CNN
-	1    3300 1750
+P 2200 3000
+F 0 "R11" V 2280 3000 50  0000 C CNN
+F 1 "1k" V 2200 3000 50  0000 C CNN
+F 2 "Resistors_ThroughHole:Resistor_Horizontal_RM10mm" V 2130 3000 50  0001 C CNN
+F 3 "" H 2200 3000 50  0000 C CNN
+	1    2200 3000
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -1087,8 +1069,6 @@ Wire Wire Line
 	1150 800  1150 1400
 Connection ~ 1150 1150
 Wire Wire Line
-	2950 1550 2950 1900
-Wire Wire Line
 	1150 1750 1150 1700
 Wire Wire Line
 	900  1300 900  1150
@@ -1110,8 +1090,6 @@ Wire Wire Line
 Wire Wire Line
 	6050 7000 6200 7000
 Wire Wire Line
-	2950 600  2950 1250
-Wire Wire Line
 	2850 1150 3400 1150
 Connection ~ 2950 1150
 Wire Wire Line
@@ -1123,8 +1101,6 @@ Wire Wire Line
 	8600 5650 8600 5750
 Wire Wire Line
 	8300 5450 8300 5750
-Wire Wire Line
-	5700 2300 6000 2300
 Wire Wire Line
 	4800 6950 4950 6950
 Connection ~ 4950 6950
@@ -1163,14 +1139,10 @@ Wire Wire Line
 Wire Wire Line
 	4150 3100 4150 3150
 Wire Wire Line
-	1950 6350 2100 6350
+	1150 2400 1300 2400
 Wire Wire Line
-	2100 6750 2100 6800
+	1300 2800 1300 2850
 Connection ~ 4200 3100
-Wire Wire Line
-	1350 5400 1900 5400
-Wire Wire Line
-	1900 5500 1350 5500
 Wire Wire Line
 	1900 4300 1700 4300
 Wire Wire Line
@@ -1187,16 +1159,11 @@ Connection ~ 7200 2700
 Wire Wire Line
 	7650 2000 7650 1950
 Wire Wire Line
-	5850 2150 5850 2300
-Connection ~ 5850 2300
-Wire Wire Line
 	3350 4350 3050 4350
 Wire Wire Line
 	3350 4450 3050 4450
 Wire Wire Line
 	5150 5050 4950 5050
-Wire Wire Line
-	2950 6600 2650 6600
 Wire Wire Line
 	3350 5050 3200 5050
 Wire Wire Line
@@ -1226,8 +1193,6 @@ Connection ~ 7200 2800
 Connection ~ 4600 1100
 Connection ~ 4650 1150
 Wire Wire Line
-	2100 7100 2100 7150
-Wire Wire Line
 	3400 1150 3400 1000
 Connection ~ 3400 1000
 Wire Wire Line
@@ -1244,11 +1209,6 @@ Wire Wire Line
 	7350 4400 7000 4400
 Wire Wire Line
 	5150 5950 4800 5950
-Wire Wire Line
-	1800 650  1800 600 
-Wire Wire Line
-	1800 600  2950 600 
-Connection ~ 2950 800 
 Wire Wire Line
 	3350 5150 2800 5150
 Wire Wire Line
@@ -1276,12 +1236,7 @@ Wire Wire Line
 	8050 2750 8050 3300
 Connection ~ 8050 3300
 Wire Wire Line
-	3300 1550 3300 1600
-Connection ~ 3300 1150
-Wire Wire Line
-	2950 1900 3300 1900
-Connection ~ 2950 1900
-Connection ~ 3300 1350
+	2200 2800 2200 2850
 Wire Wire Line
 	2050 1750 2050 1650
 Wire Wire Line
@@ -1343,6 +1298,243 @@ F 3 "" H 3100 5300 50  0000 C CNN
 	1    3100 5300
 	-1   0    0    1   
 $EndComp
-NoConn ~ 1900 5200
 NoConn ~ 8950 3850
+$Comp
+L CONN_02X04 ESP8266
+U 1 1 57766399
+P 1300 7150
+F 0 "ESP8266" H 1300 7400 50  0000 C CNN
+F 1 "CONN_02X04" H 1300 6900 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_2x04" H 1300 5950 50  0001 C CNN
+F 3 "" H 1300 5950 50  0000 C CNN
+	1    1300 7150
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR031
+U 1 1 57766634
+P 800 7000
+F 0 "#PWR031" H 800 6750 50  0001 C CNN
+F 1 "GND" H 800 6850 50  0000 C CNN
+F 2 "" H 800 7000 50  0000 C CNN
+F 3 "" H 800 7000 50  0000 C CNN
+	1    800  7000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1050 7000 800  7000
+Wire Wire Line
+	1050 7100 900  7100
+Wire Wire Line
+	1050 7200 900  7200
+Wire Wire Line
+	700  7300 1050 7300
+Wire Wire Line
+	1550 7100 1700 7100
+Wire Wire Line
+	1700 7300 1550 7300
+Text Label 1700 7200 0    60   ~ 0
+3.3V
+Wire Wire Line
+	3350 4150 3250 4150
+Text Label 3250 4150 0    60   ~ 0
+3.3V
+$Comp
+L R R13
+U 1 1 57769DD5
+P 1700 6050
+F 0 "R13" V 1780 6050 50  0000 C CNN
+F 1 "2k2" V 1700 6050 50  0000 C CNN
+F 2 "Resistors_ThroughHole:Resistor_Horizontal_RM10mm" V 1630 6050 50  0001 C CNN
+F 3 "" H 1700 6050 50  0000 C CNN
+	1    1700 6050
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R12
+U 1 1 57769EA7
+P 1700 5650
+F 0 "R12" V 1780 5650 50  0000 C CNN
+F 1 "1k" V 1700 5650 50  0000 C CNN
+F 2 "Resistors_ThroughHole:Resistor_Horizontal_RM10mm" V 1630 5650 50  0001 C CNN
+F 3 "" H 1700 5650 50  0000 C CNN
+	1    1700 5650
+	1    0    0    -1  
+$EndComp
+Text Label 900  7100 0    60   ~ 0
+Gp2
+Text Label 900  7200 0    60   ~ 0
+Gp1
+Wire Wire Line
+	1700 5800 1700 5900
+$Comp
+L GND #PWR032
+U 1 1 5776EE5B
+P 1700 6250
+F 0 "#PWR032" H 1700 6000 50  0001 C CNN
+F 1 "GND" H 1700 6100 50  0000 C CNN
+F 2 "" H 1700 6250 50  0000 C CNN
+F 3 "" H 1700 6250 50  0000 C CNN
+	1    1700 6250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1700 6200 1700 6250
+Wire Wire Line
+	1700 7100 1700 7300
+$Comp
+L LED LED_Gp2
+U 1 1 5777088E
+P 1600 2600
+F 0 "LED_Gp2" H 1600 2700 50  0000 C CIN
+F 1 "LED" H 1600 2500 50  0000 C CNN
+F 2 "LEDs:LED-5MM" H 1600 2600 50  0001 C CNN
+F 3 "" H 1600 2600 50  0000 C CNN
+	1    1600 2600
+	0    -1   -1   0   
+$EndComp
+$Comp
+L R R6
+U 1 1 57770894
+P 1600 3000
+F 0 "R6" V 1680 3000 50  0000 C CNN
+F 1 "1k" V 1600 3000 50  0000 C CNN
+F 2 "Resistors_ThroughHole:Resistor_Horizontal_RM10mm" V 1530 3000 50  0001 C CNN
+F 3 "" H 1600 3000 50  0000 C CNN
+	1    1600 3000
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR033
+U 1 1 5777089A
+P 1600 3200
+F 0 "#PWR033" H 1600 2950 50  0001 C CNN
+F 1 "GND" H 1600 3050 50  0000 C CNN
+F 2 "" H 1600 3200 50  0000 C CNN
+F 3 "" H 1600 3200 50  0000 C CNN
+	1    1600 3200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1450 2400 1600 2400
+Wire Wire Line
+	1600 2800 1600 2850
+Wire Wire Line
+	1600 3150 1600 3200
+Wire Wire Line
+	2950 6600 2850 6600
+$Comp
+L LED LED_Gp1
+U 1 1 57770BB7
+P 1900 2600
+F 0 "LED_Gp1" H 1900 2700 50  0000 C CIN
+F 1 "LED" H 1900 2500 50  0000 C CNN
+F 2 "LEDs:LED-5MM" H 1900 2600 50  0001 C CNN
+F 3 "" H 1900 2600 50  0000 C CNN
+	1    1900 2600
+	0    -1   -1   0   
+$EndComp
+$Comp
+L R R7
+U 1 1 57770BBD
+P 1900 3000
+F 0 "R7" V 1980 3000 50  0000 C CNN
+F 1 "1k" V 1900 3000 50  0000 C CNN
+F 2 "Resistors_ThroughHole:Resistor_Horizontal_RM10mm" V 1830 3000 50  0001 C CNN
+F 3 "" H 1900 3000 50  0000 C CNN
+	1    1900 3000
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR034
+U 1 1 57770BC3
+P 1900 3200
+F 0 "#PWR034" H 1900 2950 50  0001 C CNN
+F 1 "GND" H 1900 3050 50  0000 C CNN
+F 2 "" H 1900 3200 50  0000 C CNN
+F 3 "" H 1900 3200 50  0000 C CNN
+	1    1900 3200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1750 2400 1900 2400
+Wire Wire Line
+	1900 2800 1900 2850
+Wire Wire Line
+	1900 3150 1900 3200
+Text Label 1450 2400 0    60   ~ 0
+Gp2
+Text Label 1750 2400 0    60   ~ 0
+Gp1
+Wire Wire Line
+	2950 1550 2950 1750
+Wire Wire Line
+	2200 2400 2050 2400
+$Comp
+L GND #PWR035
+U 1 1 5778828B
+P 2200 3200
+F 0 "#PWR035" H 2200 2950 50  0001 C CNN
+F 1 "GND" H 2200 3050 50  0000 C CNN
+F 2 "" H 2200 3200 50  0000 C CNN
+F 3 "" H 2200 3200 50  0000 C CNN
+	1    2200 3200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2200 3200 2200 3150
+Text Label 3150 1150 0    60   ~ 0
+Vcc
+Text Label 2050 2400 0    60   ~ 0
+Vcc
+Wire Wire Line
+	1300 3150 1300 3250
+Wire Wire Line
+	5700 2300 6000 2300
+Wire Wire Line
+	5850 2150 5850 2300
+Connection ~ 5850 2300
+Wire Wire Line
+	1900 5500 1700 5500
+Wire Wire Line
+	700  7300 700  5400
+Wire Wire Line
+	700  5400 1900 5400
+Wire Wire Line
+	1550 7000 1950 7000
+Wire Wire Line
+	1950 7000 1950 5850
+Wire Wire Line
+	1950 5850 1700 5850
+Connection ~ 1700 5850
+NoConn ~ 1550 7200
+NoConn ~ 1900 5300
+$Comp
+L GND #PWR036
+U 1 1 5776F672
+P 1450 5200
+F 0 "#PWR036" H 1450 4950 50  0001 C CNN
+F 1 "GND" H 1450 5050 50  0000 C CNN
+F 2 "" H 1450 5200 50  0000 C CNN
+F 3 "" H 1450 5200 50  0000 C CNN
+	1    1450 5200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1900 5200 1450 5200
+Wire Wire Line
+	2950 800  2950 1250
+Wire Wire Line
+	1800 750  1800 600 
+Wire Wire Line
+	1800 600  2400 600 
+Wire Wire Line
+	2400 600  2400 800 
+Connection ~ 2400 800 
+Text Label 3350 4750 2    60   ~ 0
+AC1
+Wire Wire Line
+	7950 2750 7850 2750
+Wire Wire Line
+	8150 3150 8150 3050
 $EndSCHEMATC
