@@ -1,4 +1,5 @@
 EESchema Schematic File Version 2
+LIBS:Proyecto-rescue
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -28,12 +29,6 @@ LIBS:opto
 LIBS:atmel
 LIBS:contrib
 LIBS:valves
-LIBS:MCP2515 E
-LIBS:SongleRelay
-LIBS:mylib
-LIBS:HK4100F
-LIBS:acs712
-LIBS:AMS1117
 LIBS:Proyecto-cache
 EELAYER 25 0
 EELAYER END
@@ -329,7 +324,7 @@ F 3 "" H 5350 5950 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L CONN_01X02 CAN1
+L CONN_01X02-RESCUE-Proyecto CAN1
 U 1 1 576B8DD1
 P 8350 3200
 F 0 "CAN1" H 8350 3350 50  0000 C CNN
@@ -340,7 +335,7 @@ F 3 "" H 8350 3200 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L CONN_01X02 Carga1
+L CONN_01X02-RESCUE-Proyecto Carga1
 U 1 1 576B90D8
 P 8000 2550
 F 0 "Carga1" H 8000 2700 50  0000 C CNN
@@ -604,7 +599,7 @@ F 3 "" H 5850 2000 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L CONN_01X02 S0
+L CONN_01X02-RESCUE-Proyecto S0
 U 1 1 576D275D
 P 700 1350
 F 0 "S0" H 700 1500 50  0000 C CNN
