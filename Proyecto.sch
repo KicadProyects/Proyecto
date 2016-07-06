@@ -33,6 +33,8 @@ LIBS:MCP2515 E
 LIBS:SongleRelay
 LIBS:mylib
 LIBS:HK4100F
+LIBS:acs712
+LIBS:AMS1117
 LIBS:Proyecto-cache
 EELAYER 25 0
 EELAYER END
@@ -974,8 +976,6 @@ Wire Wire Line
 Wire Wire Line
 	3450 6250 3450 6300
 Wire Wire Line
-	3450 6300 3750 6300
-Wire Wire Line
 	3600 6300 3600 6400
 Connection ~ 3600 6300
 Wire Wire Line
@@ -988,8 +988,6 @@ Wire Wire Line
 	4400 6450 4400 6950
 Wire Wire Line
 	7950 2750 7950 2950
-Wire Wire Line
-	4800 5950 4800 6950
 Wire Wire Line
 	4950 6650 4950 6750
 Wire Wire Line
@@ -1082,15 +1080,9 @@ Wire Wire Line
 	8600 5650 8600 5750
 Wire Wire Line
 	8300 5450 8300 5750
-Wire Wire Line
-	4800 6950 4950 6950
 Connection ~ 4950 6950
 Wire Wire Line
-	4950 6700 4600 6700
-Wire Wire Line
-	4600 6700 4600 6950
-Wire Wire Line
-	4600 6950 4400 6950
+	4400 6950 4950 6950
 Connection ~ 4950 6700
 Connection ~ 8400 5100
 Wire Wire Line
@@ -1213,13 +1205,7 @@ Wire Wire Line
 Wire Wire Line
 	2050 1750 2050 1650
 Wire Wire Line
-	3450 5900 3750 5900
-Wire Wire Line
-	3750 5900 3750 6050
-Wire Wire Line
-	3750 6300 3750 6150
-Wire Wire Line
-	3600 5850 3600 5900
+	3600 5850 3600 6150
 Connection ~ 3600 5900
 Wire Wire Line
 	6400 7200 6400 7400
@@ -1534,4 +1520,18 @@ Wire Wire Line
 	1600 2400 1600 2450
 Wire Wire Line
 	1900 2400 1900 2450
+Wire Wire Line
+	3450 5900 3600 5900
+Wire Wire Line
+	3450 6300 3700 6300
+Wire Wire Line
+	3600 6150 3750 6150
+Wire Wire Line
+	3750 6050 3700 6050
+Wire Wire Line
+	3700 6050 3700 6300
+Wire Wire Line
+	4950 6700 4800 6700
+Wire Wire Line
+	4800 6700 4800 5950
 $EndSCHEMATC
