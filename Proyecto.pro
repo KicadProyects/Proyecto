@@ -1,6 +1,6 @@
-update=5/7/2016 12:06:19 p. m.
+update=05/07/2016 16:24:03
 version=1
-last_client=kicad
+last_client=eeschema
 [cvpcb]
 version=1
 NetIExt=net
@@ -25,16 +25,6 @@ SolderMaskMinWidth=0
 DrawSegmentWidth=0.2
 BoardOutlineThickness=0.09999999999999999
 ModuleOutlineThickness=0.15
-[schematic_editor]
-version=1
-PageLayoutDescrFile=
-PlotDirectoryName=
-SubpartIdSeparator=0
-SubpartFirstId=65
-NetFmtName=Pcbnew
-SpiceForceRefPrefix=0
-SpiceUseNetNumbers=0
-LabSize=60
 [eeschema]
 version=1
 LibDir=
@@ -75,3 +65,13 @@ LibName33=D:/Descargas/can01_20160610/Biblioteca/mylib
 LibName34=D:/Descargas/can01_20160614/Biblioteca/HK4100F
 LibName35=D:/Descargas/nc-libs-master/nc-libs-master/acs712
 LibName36=D:/Descargas/nc-libs-master/nc-libs-master/AMS1117
+[schematic_editor]
+version=1
+PageLayoutDescrFile=
+PlotDirectoryName=
+SubpartIdSeparator=0
+SubpartFirstId=65
+NetFmtName=Pcbnew
+SpiceForceRefPrefix=0
+SpiceUseNetNumbers=0
+LabSize=60
