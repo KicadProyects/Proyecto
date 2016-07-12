@@ -1,9 +1,6 @@
-update=05/07/2016 16:24:03
+update=11/07/2016 17:57:33
 version=1
 last_client=eeschema
-[cvpcb]
-version=1
-NetIExt=net
 [general]
 version=1
 [pcbnew]
@@ -75,3 +72,6 @@ NetFmtName=Pcbnew
 SpiceForceRefPrefix=0
 SpiceUseNetNumbers=0
 LabSize=60
+[cvpcb]
+version=1
+NetIExt=net
