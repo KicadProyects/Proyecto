@@ -33,6 +33,19 @@ LIBS:MCP2515 E
 LIBS:SongleRelay
 LIBS:mylib
 LIBS:HK4100F
+LIBS:acs712
+LIBS:AMS1117
+LIBS:w_analog
+LIBS:w_microcontrollers
+LIBS:w_transistor
+LIBS:w_connectors
+LIBS:w_memory
+LIBS:w_rtx
+LIBS:w_logic
+LIBS:w_opto
+LIBS:w_vacuum
+LIBS:w_device
+LIBS:w_relay
 LIBS:Proyecto-cache
 EELAYER 25 0
 EELAYER END
@@ -1157,10 +1170,9 @@ Wire Wire Line
 	1900 5100 1650 5100
 Wire Wire Line
 	6200 7000 6200 7300
-Connection ~ 7000 3700
 Connection ~ 7200 2800
 Wire Wire Line
-	3400 1150 3400 1000
+	3400 1000 3400 1400
 Connection ~ 3400 1000
 Wire Wire Line
 	5850 1800 5850 1850
@@ -1593,7 +1605,7 @@ F 3 "" H 10750 1150 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	10750 1250 10750 1150
+	10750 1150 10750 1400
 $Comp
 L +5V #PWR040
 U 1 1 577DEE88
@@ -1742,4 +1754,36 @@ Wire Wire Line
 	3350 4650 3050 4650
 Text Label 3050 4650 0    60   ~ 0
 PIN26
+$Comp
+L CP C14
+U 1 1 578699D7
+P 3400 1550
+F 0 "C14" H 3425 1650 50  0000 L CNN
+F 1 "10uf" H 3425 1450 50  0000 L CNN
+F 2 "w_capacitors:CP_5x11mm" H 3438 1400 50  0001 C CNN
+F 3 "" H 3400 1550 50  0000 C CNN
+	1    3400 1550
+	1    0    0    -1  
+$EndComp
+$Comp
+L CP C13
+U 1 1 57869F7B
+P 10750 1550
+F 0 "C13" H 10775 1650 50  0000 L CNN
+F 1 "10uf" H 10775 1450 50  0000 L CNN
+F 2 "w_capacitors:CP_5x11mm" H 10788 1400 50  0001 C CNN
+F 3 "" H 10750 1550 50  0000 C CNN
+	1    10750 1550
+	1    0    0    -1  
+$EndComp
+Connection ~ 10750 1250
+Wire Wire Line
+	10750 1700 10750 1750
+Wire Wire Line
+	10750 1750 10300 1750
+Connection ~ 10300 1750
+Connection ~ 3400 1150
+Wire Wire Line
+	3400 1700 2950 1700
+Connection ~ 2950 1700
 $EndSCHEMATC
