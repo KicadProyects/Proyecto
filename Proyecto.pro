@@ -1,8 +1,21 @@
-update=13/7/2016 1:57:37 p. m.
+update=21/07/2016 11:11:32
 version=1
 last_client=kicad
 [general]
 version=1
+[schematic_editor]
+version=1
+PageLayoutDescrFile=
+PlotDirectoryName=
+SubpartIdSeparator=0
+SubpartFirstId=65
+NetFmtName=Pcbnew
+SpiceForceRefPrefix=0
+SpiceUseNetNumbers=0
+LabSize=60
+[cvpcb]
+version=1
+NetIExt=net
 [pcbnew]
 version=1
 PageLayoutDescrFile=
@@ -22,19 +35,6 @@ SolderMaskMinWidth=0
 DrawSegmentWidth=0.2
 BoardOutlineThickness=0.09999999999999999
 ModuleOutlineThickness=0.15
-[schematic_editor]
-version=1
-PageLayoutDescrFile=
-PlotDirectoryName=
-SubpartIdSeparator=0
-SubpartFirstId=65
-NetFmtName=Pcbnew
-SpiceForceRefPrefix=0
-SpiceUseNetNumbers=0
-LabSize=60
-[cvpcb]
-version=1
-NetIExt=net
 [eeschema]
 version=1
 LibDir=
@@ -73,16 +73,16 @@ LibName31=D:/Descargas/can01_20160610/Biblioteca/MCP2515 E
 LibName32=D:/Descargas/can01_20160610/Biblioteca/SongleRelay
 LibName33=D:/Descargas/can01_20160610/Biblioteca/mylib
 LibName34=D:/Descargas/can01_20160614/Biblioteca/HK4100F
-LibName35=D:/Descargas/nc-libs-master/nc-libs-master/acs712
-LibName36=D:/Descargas/nc-libs-master/nc-libs-master/AMS1117
-LibName37=C:/Program Files/KiCad/share/kicad/library/w_analog
-LibName38=C:/Program Files/KiCad/share/kicad/library/w_microcontrollers
-LibName39=C:/Program Files/KiCad/share/kicad/library/w_transistor
-LibName40=C:/Program Files/KiCad/share/kicad/library/w_connectors
-LibName41=C:/Program Files/KiCad/share/kicad/library/w_memory
-LibName42=C:/Program Files/KiCad/share/kicad/library/w_rtx
-LibName43=C:/Program Files/KiCad/share/kicad/library/w_logic
-LibName44=C:/Program Files/KiCad/share/kicad/library/w_opto
-LibName45=C:/Program Files/KiCad/share/kicad/library/w_vacuum
-LibName46=C:/Program Files/KiCad/share/kicad/library/w_device
-LibName47=C:/Program Files/KiCad/share/kicad/library/w_relay
+LibName35=D:/Descargas/nc-libs-master/nc-libs-master/AMS1117
+LibName36=C:/Program Files/KiCad/share/kicad/library/w_analog
+LibName37=C:/Program Files/KiCad/share/kicad/library/w_microcontrollers
+LibName38=C:/Program Files/KiCad/share/kicad/library/w_transistor
+LibName39=C:/Program Files/KiCad/share/kicad/library/w_connectors
+LibName40=C:/Program Files/KiCad/share/kicad/library/w_memory
+LibName41=C:/Program Files/KiCad/share/kicad/library/w_rtx
+LibName42=C:/Program Files/KiCad/share/kicad/library/w_logic
+LibName43=C:/Program Files/KiCad/share/kicad/library/w_opto
+LibName44=C:/Program Files/KiCad/share/kicad/library/w_vacuum
+LibName45=C:/Program Files/KiCad/share/kicad/library/w_device
+LibName46=C:/Program Files/KiCad/share/kicad/library/w_relay
+LibName47=C:/Program Files/KiCad/share/kicad/library/acs712
